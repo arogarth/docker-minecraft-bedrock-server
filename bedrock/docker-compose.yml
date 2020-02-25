@@ -1,0 +1,10 @@
+version: "3"
+services:
+  minecraft:
+    image: arogarth/minecraft-server
+    build: .
+    environment:
+      ACCEPT_EULA: "true"
+    ports:
+    - 19132:19132/tcp
+    - 19132:19132/udp
