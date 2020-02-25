@@ -1,10 +1,12 @@
 version: "3"
 services:
   minecraft:
-    image: arogarth/minecraft-server
+    image: arogarth/minecraft-server:bedrock
     build: .
     environment:
       ACCEPT_EULA: "true"
+      MC_SERVER_NAME: "Minecraft Docker"
+      MC_WHITE_LIST: "true"
     ports:
     - 19132:19132/tcp
     - 19132:19132/udp
