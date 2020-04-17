@@ -1,7 +1,9 @@
 FROM ubuntu:bionic
 
 # https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
-ENV SERVER_VERSION "1.14.60.5"
+ARG BEDROCK_VERSION="1.14.60.5"
+
+ENV SERVER_VERSION=$BEDROCK_VERSION
 ENV ACCEPT_EULA "no"
 ENV WORKDIR "/opt/minecraft/"
 
