@@ -9,6 +9,8 @@ jobs:
       matrix:
         mc_version:
           - "1.16.210.06"
+          - "1.16.201.03"
+          - "1.14.60.5"
 
     steps:
       - uses: actions/checkout@v2
