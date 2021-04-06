@@ -28,5 +28,5 @@ jobs:
           context: .
           push: true
           build-args: "SERVER_VERSION=${{ env.MC_VERSION }}"
-          tags:  arogarth/docker-minecraft-bedrock-server:latest,arogarth/docker-minecraft-bedrock-server:${{ env.MC_VERSION }}
+          tags:  arogarth/minecraft-bedrock-server:latest,arogarth/minecraft-bedrock-server:${{ env.MC_VERSION }}
 
