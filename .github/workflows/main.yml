@@ -42,4 +42,4 @@ jobs:
           build-args:
             - SERVER_VERSION=${{ matrix.mc_version }}
           push: true
-          tags: arogarth/docker-minecraft-bedrock-server:latest
+          tags: arogarth/docker-minecraft-bedrock-server:${{ matrix.mc_version }}
