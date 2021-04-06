@@ -2,9 +2,9 @@ FROM ubuntu:bionic
 
 ARG SERVER_VERSION="1.16.210.06"
 
-ENV SERVER_VERSION="${SERVER_VERSION}" \
-    ACCEPT_EULA="no" \
-    WORKDIR="/opt/minecraft/"
+ENV SERVER_VERSION=$BEDROCK_VERSION
+ENV ACCEPT_EULA "no"
+ENV WORKDIR "/opt/minecraft/"
 
 WORKDIR ${WORKDIR}
 
@@ -16,7 +16,6 @@ RUN mkdir -p ${WORKDIR} \
  && curl -sL -o /tmp/server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-${SERVER_VERSION}.zip \
  && unzip /tmp/server.zip -d ${WORKDIR}
 
-VOLUME /opt/minecraft/
 COPY entrypoint.sh /
 COPY build_properties.py /
 
