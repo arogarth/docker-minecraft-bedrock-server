@@ -5,12 +5,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        mc_version:
-          - "1.16.210.06"
-          - "1.16.201.03"
-          - "1.14.60.5"
+    env:
+      MC_VERSION: "1.16.210.06"
+#    strategy:
+#      matrix:
+#        mc_version:
+#          - "1.16.210.06"
+#          - "1.16.201.03"
+#          - "1.14.60.5"
 
     steps:
       - uses: actions/checkout@v2
@@ -25,5 +27,6 @@ jobs:
         with:
           context: .
           push: true
-          build-args: "SERVER_VERSION=${{ matrix.mc_version }}"
-          tags: arogarth/docker-minecraft-bedrock-server:${{ matrix.mc_version }}
+          build-args: "SERVER_VERSION=${{ env.MC_VERSION }}"
+          tags:  arogarth/docker-minecraft-bedrock-server:latest,arogarth/docker-minecraft-bedrock-server:${{ env.MC_VERSION }}
+
