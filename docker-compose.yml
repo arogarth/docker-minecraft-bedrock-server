@@ -1,7 +1,7 @@
 version: "3"
 services:
   minecraft:
-    image: arogarth/minecraft-server:bedrock
+    image: arogarth/docker-minecraft-bedrock-server
     build: .
     environment:
       ACCEPT_EULA: "true"
