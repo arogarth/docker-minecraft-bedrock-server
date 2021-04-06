@@ -1,7 +1,6 @@
 FROM ubuntu:bionic
 
-# https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
-ARG SERVER_VERSION="1.14.30.2"
+ARG SERVER_VERSION="1.16.210.06"
 
 ENV SERVER_VERSION="${SERVER_VERSION}" \
     ACCEPT_EULA="no" \
