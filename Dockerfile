@@ -1,8 +1,8 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
 ARG SERVER_VERSION="1.16.210.06"
 
-ENV SERVER_VERSION=$BEDROCK_VERSION
+ENV SERVER_VERSION=$SERVER_VERSION
 ENV ACCEPT_EULA "no"
 ENV WORKDIR "/opt/minecraft/"
 
@@ -13,7 +13,7 @@ RUN apt-get update \
  && apt-get install -y curl zip unzip python3 vim
 
 RUN mkdir -p ${WORKDIR} \
- && curl -sL -o /tmp/server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-${SERVER_VERSION}.zip \
+ && curl -ksL -o /tmp/server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-${SERVER_VERSION}.zip \
  && unzip /tmp/server.zip -d ${WORKDIR}
 
 COPY entrypoint.sh /
