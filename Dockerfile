@@ -16,6 +16,8 @@ RUN mkdir -p ${WORKDIR} \
  && curl -ksL -o /tmp/server.zip https://minecraft.azureedge.net/bin-linux/bedrock-server-${SERVER_VERSION}.zip \
  && unzip /tmp/server.zip -d ${WORKDIR}
 
+RUN chmod +x /opt/minecraft/bedrock_server
+
 COPY entrypoint.sh /
 COPY build_properties.py /
 
