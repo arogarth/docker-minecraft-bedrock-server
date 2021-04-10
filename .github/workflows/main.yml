@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MC_VERSION: "1.16.210.06"
+      MC_VERSION: "1.16.220.02"
 #    strategy:
 #      matrix:
 #        mc_version:
