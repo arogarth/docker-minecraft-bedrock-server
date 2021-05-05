@@ -7,14 +7,13 @@ jobs:
 
     env:
       MC_VERSION: "1.16.220.02"
-#    strategy:
-#      matrix:
-#        mc_version:
-#          - "1.16.210.06"
-#          - "1.16.201.03"
-#          - "1.14.60.5"
 
     steps:
+      - name: Read package.json
+        id: mc_version
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./VERSION
       - uses: actions/checkout@v2
       - name: Login to DockerHub
         uses: docker/login-action@v1
@@ -27,6 +26,6 @@ jobs:
         with:
           context: .
           push: true
-          build-args: "SERVER_VERSION=${{ env.MC_VERSION }}"
-          tags:  arogarth/minecraft-bedrock-server:latest,arogarth/minecraft-bedrock-server:${{ env.MC_VERSION }}
+          build-args: "SERVER_VERSION=${{ steps.mc_version.outputs.content }}"
+          tags:  arogarth/minecraft-bedrock-server:latest,arogarth/minecraft-bedrock-server:${{ steps.mc_version.outputs.content }}
 
