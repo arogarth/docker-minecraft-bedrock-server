@@ -9,11 +9,11 @@ jobs:
       MC_VERSION: "1.16.220.02"
 
     steps:
-      - name: Read package.json
+      - name: Read Version file
         id: mc_version
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./VERSION
+          path: ./../../VERSION
       - uses: actions/checkout@v2
       - name: Login to DockerHub
         uses: docker/login-action@v1
